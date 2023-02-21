@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VPKS", "VPKS\VPKS.csproj", "{88245F07-B083-46DE-B4DD-94C22A45FDBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88245F07-B083-46DE-B4DD-94C22A45FDBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88245F07-B083-46DE-B4DD-94C22A45FDBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88245F07-B083-46DE-B4DD-94C22A45FDBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88245F07-B083-46DE-B4DD-94C22A45FDBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37934FEF-FDE3-4585-A362-FBF65EAC8895}
+	EndGlobalSection
+EndGlobal

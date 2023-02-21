@@ -1,0 +1,92 @@
+﻿<Window x:Class="VPKS.ClientOrderMakingWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:VPKS"
+		mc:Ignorable="d"
+		Title="Оформление заказа" Height="600" Width="1000" ResizeMode="NoResize">
+	<Window.Background>
+		<ImageBrush ImageSource="/Images/DefaultBackGround.png"/>
+	</Window.Background>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="5*"/>
+			<ColumnDefinition Width="2*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*"/>
+			<RowDefinition Height="7*"/>
+		</Grid.RowDefinitions>
+		<TextBlock TextWrapping="Wrap" Text="NOTDC - Оформление заказа" FontSize="50" FontFamily="Comic Sans MS" VerticalAlignment="Center" HorizontalAlignment="Right" Width="550" Margin="0,0,0,0"/>
+		<Grid Grid.Row="0" Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
+			<Label Grid.Row="0" FontSize="30" FontFamily="Comic Sans MS" x:Name="userNameLabel" Height="45" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+			<Border CornerRadius="15" Margin="10,0,10,15" BorderBrush="Black" Grid.Row="1" Height="30" VerticalAlignment="Bottom" BorderThickness="1" Background="#584D4D">
+				<Button x:Name="exitButton" Click="exitButton_Click" Foreground="White" BorderBrush="Transparent" Background="Transparent" Content="Выйти" FontSize="20" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+			</Border>
+			<Border CornerRadius="15" Margin="10,0,10,15" BorderBrush="Black" Grid.Row="2" Height="30" VerticalAlignment="Bottom" BorderThickness="1" Background="#584D4D">
+				<Button x:Name="menuButton" Click="menuButton_Click" Foreground="White" BorderBrush="Transparent" Background="Transparent" Content="Меню" FontSize="20" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+			</Border>
+		</Grid>
+
+		<Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" BorderBrush="Black" BorderThickness="2" Margin="15,10,15,5" Background="#F4EFEF">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+				<Label Content="Список блюд в заказе:" FontSize="24" FontFamily="Comic Sans MS" Grid.Column="0" Height="40" VerticalAlignment="Top"/>
+				<Border BorderBrush="Black" BorderThickness="2" Margin="10, 0, 15, 5" VerticalAlignment="Bottom" Height="360">
+					<ListBox x:Name="foodListBox" FontFamily="Comic Sans MS" FontSize="20"/>
+				</Border>
+
+				<TextBlock Text="Данные о заказе:" Width="325" FontFamily="Comic Sans MS" Grid.Column="1" FontSize="20" TextWrapping="Wrap" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top"/>
+				<Border Background="#E1E1E1" Grid.Column="1" Height="375" VerticalAlignment="Bottom" Margin="10, 10, 10, 5" BorderBrush="Black" BorderThickness="1">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Label Content="Адрес доставки:" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="0"/>
+						<TextBox x:Name="adressTextBox" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="1" Width="225" HorizontalAlignment="Left" Margin="10,5,0,5" BorderBrush="Black" BorderThickness="1"/>
+
+						<Label Content="Номер телефона:" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="2"/>
+						<TextBox x:Name="phoneNumberTextBox" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="3" Width="225" HorizontalAlignment="Left" Margin="10,5,0,5" BorderBrush="Black" BorderThickness="1"/>
+
+						<Label Content="К оплате:" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="4"/>
+						<TextBox x:Name="costTextBox" IsEnabled="False" FontSize="20" FontFamily="Comic Sans MS" Grid.Row="5" Width="225" HorizontalAlignment="Left" Margin="10,5,0,5" BorderBrush="Black" BorderThickness="1"/>
+
+						<Border CornerRadius="15" Width="225" Margin="10,5,0,5" BorderBrush="Black" Grid.Row="8" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" BorderThickness="1" Background="#78CD0D">
+							<Button x:Name="makeOrderButton" Click="makeOrderButton_Click" Foreground="Black" BorderBrush="Transparent" Background="Transparent" Content="Оформить" FontSize="20" FontFamily="Comic Sans MS" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+						</Border>
+					</Grid>
+				</Border>
+				<Grid Grid.Column="2" VerticalAlignment="Top">
+					<Grid.RowDefinitions>
+						<RowDefinition/>
+						<RowDefinition/>
+						<RowDefinition/>
+					</Grid.RowDefinitions>
+					<Label Content="Сумма заказа: " x:Name="orderCostLabel" FontSize="20" FontFamily="Comic Sans MS"/>
+					<Border CornerRadius="15" Grid.Row="1" Margin="10,5,10,10" Background="#78CD0D" BorderBrush="Black" BorderThickness="1">
+						<Button x:Name="cartButton" Click="cartButton_Click" Background="Transparent" BorderBrush="Transparent" Content="Вернуться к корзине" FontFamily="Comic Sans MS" FontSize="20"/>
+					</Border>
+					<Border CornerRadius="15" Grid.Row="2" Margin="10,5,10,10" Background="#78CD0D" BorderBrush="Black" BorderThickness="1">
+						<Button x:Name="replenishButton" Click="replenishButton_Click" Background="Transparent" BorderBrush="Transparent" Content="Пополнить счет" FontFamily="Comic Sans MS" FontSize="20"/>
+					</Border>
+				</Grid>
+			</Grid>
+		</Border>
+	</Grid>
+</Window>
